@@ -1,0 +1,29 @@
+---
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    name: prek + pytest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.14'
+          enable-cache: true
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      # Runs ruff check, ruff format, ty, yamlfix, and sqlfluff (see
+      # .pre-commit-config.yaml). Any hook that reformats a file fails the run.
+      - name: Run prek hooks
+        run: uvx prek run --all-files --show-diff-on-failure
+      - name: Run tests
+        run: uv run pytest

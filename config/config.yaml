@@ -1,0 +1,13 @@
+---
+# Default settings for babylist-scraper.
+# Any value here is overridden by the matching CLI flag when provided.
+
+# Registry to scrape when no URL is passed on the command line.
+# Accepts a full link (https://www.babylist.com/list/<slug>) or a bare <slug>.
+registry_url: https://www.babylist.com/list/babyloewen
+output:
+  format: xlsx  # xlsx | csv | parquet
+  path: output/registry.xlsx
+scraper:
+  headless: true  # set false to watch the browser while debugging
+  timeout_seconds: 45  # raise if large registries don't fully load

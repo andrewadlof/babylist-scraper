@@ -1,0 +1,36 @@
+---
+# Managed by prek (https://github.com/j178/prek), a drop-in pre-commit runner.
+# Hooks run the tools pinned in uv.lock via `uv run`, so local and CI versions match.
+# Install the git hook with:  prek install
+# Run against everything with: prek run --all-files
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: uv run ruff check --fix
+        language: system
+        types_or: [python, pyi]
+        require_serial: true
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: system
+        types_or: [python, pyi]
+        require_serial: true
+      - id: ty
+        name: ty check
+        entry: uv run ty check
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: yamlfix
+        name: yamlfix
+        entry: uv run yamlfix
+        language: system
+        types: [yaml]
+      - id: sqlfluff-lint
+        name: sqlfluff lint
+        entry: uv run sqlfluff lint --dialect ansi
+        language: system
+        types: [sql]

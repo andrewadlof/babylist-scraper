@@ -1,5 +1,17 @@
 # babylist-scraper
 
+[![CI](https://img.shields.io/github/actions/workflow/status/andrewadlof/babylist-scraper/ci.yml?branch=main&logo=github&label=CI)](https://github.com/andrewadlof/babylist-scraper/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.14%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![uv](https://img.shields.io/badge/packaging-uv-DE5FE9?logo=uv&logoColor=white)](https://docs.astral.sh/uv/)
+[![Polars](https://img.shields.io/badge/dataframes-Polars-CD792C?logo=polars&logoColor=white)](https://pola.rs/)
+[![Playwright](https://img.shields.io/badge/scraping-Playwright-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev/python/)
+[![Typer](https://img.shields.io/badge/CLI-Typer-009688?logo=typer&logoColor=white)](https://typer.tiangolo.com/)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Checked with ty](https://img.shields.io/badge/types-ty-261230?logo=astral&logoColor=white)](https://github.com/astral-sh/ty)
+[![pre-commit](https://img.shields.io/badge/pre--commit-prek-FAB040?logo=pre-commit&logoColor=black)](https://github.com/j178/prek)
+[![Open PRs](https://img.shields.io/github/issues-pr/andrewadlof/babylist-scraper?logo=github&label=open%20PRs)](https://github.com/andrewadlof/babylist-scraper/pulls)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?logo=github)](https://github.com/andrewadlof/babylist-scraper/pulls)
+
 A small CLI that scrapes a **public Babylist baby registry** from its share link and saves it
 to a flat file (`xlsx` by default, or `csv` / `parquet`), enriched with extra columns for
 annotation and analysis.
